@@ -1,26 +1,34 @@
 # Gaming vs Academic Performance Predictor
 
-A tabular regression model that predicts student grades (0–100) based on gaming habits, lifestyle, and behavioral features using fastai and PyTorch.
-
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.11+-blue?logo=python" alt="Python 3.11+">
   <img src="https://img.shields.io/badge/fastai-2.8-orange?logo=python" alt="fastai 2.8">
   <img src="https://img.shields.io/badge/made_with-Jupyter-orange?logo=jupyter" alt="Made with Jupyter">
+  <img src="https://img.shields.io/badge/kaggle-model-20BEFF?logo=kaggle" alt="Kaggle Model">
+</p>
+
+<p align="center">
+  <b>Try it instantly on Kaggle:</b>
+  <a href="https://www.kaggle.com/models/anugrhabhujel/academic-performance-predictor">kaggle.com/models/anugrhabhujel/academic-performance-predictor</a>
 </p>
 
 ---
 
+A deep learning model that predicts student grades (0–100) from gaming habits, lifestyle, and behavioral data — built with fastai and PyTorch.
+
+Achieves **MAE 4.91**, **R² 0.92** on a held-out test set of 800 students.
+
 ## Overview
 
-This project builds a deep learning model to predict academic grades from features like gaming hours, study habits, sleep, attendance, and more. It consists of two notebooks:
+The project uses a tabular neural network to model how factors like gaming hours, study time, sleep, attendance, and gaming genre affect academic performance. It consists of two notebooks:
 
-- **Training** — full EDA, model training, cross-validation, and evaluation
-- **Inference** — single prediction, batch CSV prediction, and test set analysis
+- **Training** — EDA, model training, 5-fold cross-validation, permutation feature importance
+- **Inference** — single prediction, batch CSV prediction, test set evaluation
 
 ## Project Structure
 
 ```
-Deep-Learning/
+gaming-vs-grades-predictor/
 ├── gaming-vs-grades-train.ipynb   # Training notebook — EDA, model training, k-fold CV, evaluation
 ├── main.ipynb                     # Inference notebook — single prediction, batch CSV, test analysis
 ├── data/
@@ -72,14 +80,25 @@ jupyter notebook gaming-vs-grades-train.ipynb
 
 ## Evaluation
 
-| Metric | Description |
-|---|---|
-| **MAE** | Mean Absolute Error — average prediction error in points |
-| **RMSE** | Root Mean Squared Error — penalizes large errors more heavily |
-| **R²** | Coefficient of Determination — variance explained by the model |
-| **5-Fold CV** | Cross-validation for robustness and overfitting check |
+**Test set (800 holdout samples):**
 
-The training notebook also includes permutation feature importance, residual analysis, and per-fold metric visualizations.
+| Metric | Value |
+|---|---|
+| **MAE** | 4.91 |
+| **RMSE** | 6.24 |
+| **R²** | 0.9205 |
+| Within 5 points | 56.9% |
+| Within 10 points | 88.9% |
+| Within 15 points | 98.4% |
+
+5-fold cross-validation was consistent (avg RMSE ~6.1). The training notebook includes permutation feature importance, residual analysis, and per-fold visualizations.
+
+## Try the Model
+
+You can use the model without cloning this repo:
+
+- **Kaggle:** [Model page](https://www.kaggle.com/models/anugrhabhujel/academic-performance-predictor) with demo code
+- **Locally:** Load `models/model.pkl` via `load_learner()` (see Usage below)
 
 ## Usage
 
