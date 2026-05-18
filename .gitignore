@@ -78,6 +78,10 @@ wandb/
 neptune/
 cometruns/
 
-# ── Project-specific ──
+# ── Project-specific (Kaggle-only docs) ──
 OPTIMIZATION_PLAN.md
 Deep-Learning-backup/
+usage.txt
+model-description.md
+provenance.md
+citations.md
