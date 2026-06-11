@@ -8,8 +8,8 @@
 </p>
 
 <p align="center">
-  <b>Try it instantly on Kaggle:</b>
-  <a href="https://www.kaggle.com/models/anugrhabhujel/academic-performance-predictor">kaggle.com/models/anugrhabhujel/academic-performance-predictor</a>
+  <b>Try it instantly on Hugging Face:</b>
+  <a href="https://huggingface.co/spaces/Anugrha4823/AcademicPerformancePredictor">https://huggingface.co/spaces/Anugrha4823/AcademicPerformancePredictor</a>
 </p>
 
 ---
